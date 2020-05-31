@@ -1,0 +1,9 @@
+.counter--critical {
+    color: red;
+}
+.counter--normal {
+    color: black
+}
+.counter-positive {
+    color: green
+}
