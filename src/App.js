@@ -1,15 +1,24 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Greet from './Greet'
 import './App.css'
 import Student from'./Student'
 
 function App() {
+  const [students, setStudents] = useState([{
+    name: 'Norman Normalbürger',
+    matriculation: '11223344'
+  }, {
+    name: 'Susi Sonnenschein',
+    matriculation: '28022978'
+  }])
   return (
     <div className="app">
       <h1>Student Grading<br/><Greet/></h1>
 
-      <Student name="Max Mustermann" matriculation="123456" grade="3"/>
-      <Student name="Sabine Selfie" matriculation="654321" grade="2"/>
+      {students.map((student) => (
+        <Student name={student.name} matriculation={student.matriculation}/>
+      ))}
+      
     </div>
   )
 }
