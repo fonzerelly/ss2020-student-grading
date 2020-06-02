@@ -15,8 +15,8 @@ function App() {
     <div className="app">
       <h1>Student Grading<br/><Greet/></h1>
 
-      {students.map((student) => (
-        <Student name={student.name} matriculation={student.matriculation}/>
+      {students.map((student, index) => (
+        <Student name={student.name} matriculation={student.matriculation} key={index}/>
       ))}
       
     </div>
