@@ -13,7 +13,7 @@ function Counter () {
         console.log('###',counter)
     }
 
-    const format = (counter) => {
+    const format = () => {
         console.log('!!!', counter)
         if (counter <= 2) {
             return 'counter-positive'
@@ -26,7 +26,7 @@ function Counter () {
     return (
         <span>
             <button onClick={inc}>+</button>
-            <span className={format(counter)}>{counter}</span>
+            <span className={format()}>{counter}</span>
             <button onClick={dec}>-</button>
         </span>
     );
