@@ -4,7 +4,7 @@ import './App.css'
 import Student from'./Student'
 
 function App() {
-  const [students, setStudents] = useState([{
+  const [students] = useState([{
     name: 'Norman Normalbürger',
     matriculation: '11223344'
   }, {
