@@ -1,16 +1,20 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import './Counter.css'
+import {StudentContext} from './StudentContext'
 
-function Counter () {
-    let [counter, setCounter] = useState(6);
+function Grade ({index}) {
+    const [students, setStudents] = useContext(StudentContext);
+    const counter = students[index].grade;
     const inc = () =>{
-        setCounter(++counter);
-        console.log('###',counter)
+        const newStudents = [...students]
+        newStudents[index].grade += 1;
+        setStudents(newStudents);
 
     }
     const dec = () => {
-        setCounter(--counter);
-        console.log('###',counter)
+        const newStudents = [...students]
+        newStudents[index].grade -= 1;
+        setStudents(newStudents);
     }
 
     const format = () => {
@@ -31,4 +35,4 @@ function Counter () {
         </span>
     );
 }
-export default Counter;
+export default Grade;
