@@ -1,13 +1,22 @@
-import React, {useState} from 'react'
+import React from 'react'
+import Greet from './Greet'
 import './App.css'
 import StudentList from './StudentList'
-import Greet from './Greet'
-
+import AverageGrade from './AverageGrade'
+import {StudentProvider} from './StudentContext'
+import AddStudent from './AddStudent'
 function App() {
+  
   return (
     <div className="app">
       <h1>Student Grading<br/><Greet/></h1>
-      <StudentList/>
+
+      <StudentProvider>
+        <StudentList/>
+        <AverageGrade/>
+        <AddStudent/>
+      </StudentProvider>
+      
     </div>
   )
 }
